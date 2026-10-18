@@ -6,11 +6,6 @@
     <title>Hogwarts Acceptance Letter - Birthday Celebration</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'PrivetDrive';
-            src: url('data:font/opentype;charset=utf-8;base64,d09GRgABAAAA...) format('opentype');
-        }
-
         :root {
             --parchment-bg: #f4ecdc;
             --parchment-border: #d4c5a9;
@@ -29,7 +24,7 @@
         body {
             background-color: #121620;
             background-image: radial-gradient(circle at center, #1e2536 0%, #0c0f17 100%);
-            font-family: 'PrivetDrive', 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             color: var(--ink-color);
             min-height: 100vh;
             display: flex;
@@ -42,8 +37,8 @@
 
         .scene {
             width: 100%;
-            max-width: 600px;
-            height: 420px;
+            max-width: 550px;
+            height: 360px;
             perspective: 1200px;
             display: flex;
             align-items: center;
@@ -54,8 +49,7 @@
 
         .envelope-wrapper {
             width: 100%;
-            max-width: 520px;
-            height: 340px;
+            height: 100%;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -82,17 +76,18 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #ede6d3 0%, #dfd6be 100%);
-            padding: 40px;
+            padding: 30px;
         }
 
         .address-lines {
-            font-family: 'PrivetDrive', serif;
-            font-size: 1.5rem;
-            line-height: 1.6;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
             color: #3b2f2f;
             text-align: left;
             width: 100%;
-            padding-left: 20%;
+            padding-left: 15%;
+            letter-spacing: 1px;
         }
 
         .envelope-back {
@@ -109,9 +104,9 @@
             left: 0;
             width: 0;
             height: 0;
-            border-left: 260px solid transparent;
-            border-right: 260px solid transparent;
-            border-top: 170px solid var(--envelope-flap);
+            border-left: 275px solid transparent;
+            border-right: 275px solid transparent;
+            border-top: 180px solid var(--envelope-flap);
             transform-origin: top;
             transition: transform 0.6s ease;
             z-index: 3;
@@ -123,8 +118,8 @@
         }
 
         .wax-seal {
-            width: 75px;
-            height: 75px;
+            width: 80px;
+            height: 80px;
             background: radial-gradient(circle, #cc0000 0%, var(--wax-red) 70%, #660000 100%);
             border-radius: 50%;
             position: absolute;
@@ -145,7 +140,7 @@
 
         .wax-seal span {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             color: #ffebcd;
             font-weight: bold;
             text-shadow: 0 1px 2px rgba(0,0,0,0.6);
@@ -171,12 +166,12 @@
             position: absolute;
             width: 90%;
             max-width: 620px;
-            max-height: 85vh;
+            max-height: 88vh;
             background: var(--parchment-bg);
-            background-image: radial-gradient(circle, rgba(244,236,220,0.9) 0%, rgba(224,210,185,0.95) 100%);
+            background-image: radial-gradient(circle, rgba(244,236,220,0.95) 0%, rgba(224,210,185,0.95) 100%);
             border: 3px solid var(--parchment-border);
             border-radius: 4px;
-            padding: 45px 50px;
+            padding: 40px 45px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.7);
             overflow-y: auto;
             display: none;
@@ -194,7 +189,7 @@
 
         .crest-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .crest-header img {
@@ -205,46 +200,43 @@
 
         .school-header {
             text-align: center;
-            font-family: 'PrivetDrive', serif;
-            font-size: 1.3rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
             letter-spacing: 1px;
             color: #3b2f2f;
             margin-bottom: 25px;
-            line-height: 1.4;
+            line-height: 1.5;
+            font-weight: 700;
         }
 
         .letter-body {
-            font-family: 'PrivetDrive', serif;
-            font-size: 1.25rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
             line-height: 1.8;
             color: var(--ink-color);
         }
 
         .letter-body p {
-            margin-bottom: 20px;
-        }
-
-        .signature-block {
-            margin-top: 35px;
+            margin-bottom: 18px;
         }
 
         .signature-font {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: #1a110e;
             display: block;
             margin-top: 5px;
         }
 
         .rsvp-section {
-            margin-top: 40px;
+            margin-top: 35px;
             border-top: 2px dashed #c4b599;
-            padding-top: 30px;
+            padding-top: 25px;
         }
 
         .rsvp-section h3 {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 15px;
             color: #3b2f2f;
         }
@@ -255,9 +247,10 @@
 
         .form-group label {
             display: block;
-            font-family: 'PrivetDrive', serif;
-            font-size: 1.1rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
             margin-bottom: 5px;
+            color: #3b2f2f;
         }
 
         .form-group input {
@@ -278,7 +271,7 @@
             padding: 12px 25px;
             border: none;
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             width: 100%;
             transition: background-color 0.3s ease;
@@ -297,7 +290,7 @@
             border-radius: 8px;
             border: 1px solid #2e3b52;
             width: 100%;
-            max-width: 600px;
+            max-width: 550px;
             color: #d1d5db;
             font-family: sans-serif;
             font-size: 0.85rem;
@@ -318,7 +311,7 @@
             background: #3b82f6;
             color: #fff;
             border: none;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -330,10 +323,10 @@
         <div class="envelope-wrapper" id="envelopeWrapper">
             <div class="envelope-face envelope-front">
                 <div class="address-lines" id="displayAddress">
-                    Mr H Potter<br>
-                    The Cupboard under the Stairs,<br>
-                    4 Privet Drive,<br>
-                    Little Whinging,<br>
+                    MR H POTTER<br>
+                    THE CUPBOARD UNDER THE STAIRS,<br>
+                    4 PRIVET DRIVE,<br>
+                    LITTLE WHINGING,<br>
                     SURREY.
                 </div>
             </div>
@@ -353,11 +346,11 @@
         </div>
         <div class="school-header">
             HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY<br>
-            <span style="font-size: 0.95rem; font-style: italic;">Headmistress: Minerva McGonagall</span>
+            <span style="font-size: 0.85rem; font-style: italic; font-weight: normal;">Headmistress: Minerva McGonagall</span>
         </div>
         
         <div class="letter-body">
-            <p id="salutation">Dear Mr/Ms Recipient,</p>
+            <p id="salutation">Dear Mr Potter,</p>
             
             <p>We are pleased to inform you that you have been accepted to a birthday celebration Hogwarts School of Witchcraft and Wizardry.</p>
             
@@ -370,7 +363,7 @@
             <p style="margin-top: 30px;">
                 Yours sincerely,<br>
                 <span class="signature-font">Natalie Takuma</span>
-                <span style="font-size: 0.95rem; display: block; margin-top: 5px; font-family: 'Cinzel', serif;">DEPUTY HEADMISTRESS & HOST</span>
+                <span style="font-size: 0.85rem; display: block; margin-top: 5px; font-family: 'Cinzel', serif; font-weight: bold;">DEPUTY HEADMISTRESS & HOST</span>
             </p>
 
             <div class="rsvp-section">
@@ -382,100 +375,4 @@
                     </div>
                     <div class="form-group">
                         <label for="treat">Magical Treat (Food, Potion or Drink):</label>
-                        <input type="text" id="treat" required placeholder="e.g. Butterbeer cupcakes">
-                    </div>
-                    <button type="submit" class="owl-btn">Dispatch Owl with RSVP</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="url-tool">
-        <strong>Personalize for a Guest:</strong>
-        <div style="display: flex; gap: 10px; margin-top: 5px;">
-            <input type="text" id="guestNameInput" placeholder="First & Last Name (e.g. Hermione Granger)" style="margin:0;">
-            <button onclick="generateLink()">Copy Link</button>
-        </div>
-    </div>
-
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const firstNameParam = urlParams.get('first');
-        const lastNameParam = urlParams.get('last');
-
-        let fullName = "H Potter";
-        let firstName = "H";
-
-        if (firstNameParam && lastNameParam) {
-            firstName = firstNameParam;
-            fullName = `${firstNameParam} ${lastNameParam}`;
-            document.getElementById('displayAddress').innerHTML = `
-                Mr/Ms ${firstName}<br>
-                The Cupboard under the Stairs,<br>
-                4 Privet Drive,<br>
-                Little Whinging,<br>
-                SURREY.
-            `;
-            document.getElementById('salutation').innerText = `Dear ${firstName},`;
-        } else if (firstNameParam) {
-            firstName = firstNameParam;
-            fullName = firstNameParam;
-            document.getElementById('displayAddress').innerHTML = `
-                Mr/Ms ${firstName}<br>
-                The Cupboard under the Stairs,<br>
-                4 Privet Drive,<br>
-                Little Whinging,<br>
-                SURREY.
-            `;
-            document.getElementById('salutation').innerText = `Dear ${firstName},`;
-        }
-
-        let isFlipped = false;
-
-        function handleEnvelopeClick() {
-            const wrapper = document.getElementById('envelopeWrapper');
-            const instruction = document.getElementById('tapInstruction');
-            if (!isFlipped) {
-                wrapper.classList.add('flipped');
-                instruction.innerText = "Tap the wax seal to open";
-                isFlipped = true;
-            }
-        }
-
-        function openLetter(event) {
-            event.stopPropagation();
-            const wrapper = document.getElementById('envelopeWrapper');
-            wrapper.classList.add('open');
-            document.getElementById('tapInstruction').style.display = 'none';
-
-            setTimeout(() => {
-                document.getElementById('envelopeScene').style.display = 'none';
-                document.getElementById('letterContainer').classList.add('visible');
-            }, 600);
-        }
-
-        function submitRSVP(e) {
-            e.preventDefault();
-            const costume = document.getElementById('costume').value;
-            const treat = document.getElementById('treat').value;
-            alert(`🦉 Owl dispatched successfully, ${firstName}! Your character (${costume}) and your magical treat (${treat}) have been recorded for the Great Hall feast.`);
-        }
-
-        function generateLink() {
-            const val = document.getElementById('guestNameInput').value.trim();
-            if(!val) {
-                alert("Please enter a guest name.");
-                return;
-            }
-            const parts = val.split(' ');
-            const f = parts[0];
-            const l = parts.slice(1).join(' ') || '';
-            const newUrl = `${window.location.origin}${window.location.pathname}?first=${encodeURIComponent(f)}&last=${encodeURIComponent(l)}`;
-            
-            navigator.clipboard.writeText(newUrl).then(() => {
-                alert("Personalized invite link copied to clipboard! Send this URL via text:\n\n" + newUrl);
-            });
-        }
-    </script>
-</body>
-</html>
+                        <input type="text" id="treat" required placeholder="e.g. Butterbeer
