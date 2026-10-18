@@ -164,4 +164,319 @@
         }
 
         @keyframes pulse {
-            0% { opacity:
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        .letter-container {
+            position: absolute;
+            width: 90%;
+            max-width: 620px;
+            max-height: 88vh;
+            background: var(--parchment-bg);
+            background-image: radial-gradient(circle, rgba(244,236,220,0.95) 0%, rgba(224,210,185,0.95) 100%);
+            border: 3px solid var(--parchment-border);
+            border-radius: 4px;
+            padding: 40px 45px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            overflow-y: auto;
+            display: none;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.1, 0.9, 0.2, 1);
+        }
+
+        .letter-container.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .crest-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .crest-header img {
+            width: 90px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .school-header {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            color: #3b2f2f;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .letter-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--ink-color);
+        }
+
+        .letter-body p {
+            margin-bottom: 18px;
+        }
+
+        .signature-font {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #1a110e;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .rsvp-section {
+            margin-top: 35px;
+            border-top: 2px dashed #c4b599;
+            padding-top: 25px;
+        }
+
+        .rsvp-section h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #3b2f2f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #3b2f2f;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid #b8a687;
+            border-radius: 4px;
+            color: #2c221e;
+        }
+
+        .owl-btn {
+            background-color: #5c1d1d;
+            color: #f4ecdc;
+            font-family: 'Cinzel', serif;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .owl-btn:hover {
+            background-color: #7a2626;
+        }
+
+        .url-tool {
+            margin-top: 30px;
+            background: #1a2230;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #2e3b52;
+            width: 100%;
+            max-width: 550px;
+            color: #d1d5db;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .url-tool input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background: #121620;
+            border: 1px solid #374151;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .url-tool button {
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene" id="envelopeScene">
+        <div class="envelope-wrapper" id="envelopeWrapper">
+            <div class="envelope-face envelope-front" id="envelopeFront">
+                <div class="address-lines" id="displayAddress">
+                    MR H POTTER<br>
+                    THE CUPBOARD UNDER THE STAIRS,<br>
+                    4 PRIVET DRIVE,<br>
+                    LITTLE WHINGING,<br>
+                    SURREY.
+                </div>
+            </div>
+            <div class="envelope-face envelope-back" id="envelopeBack">
+                <div class="envelope-flap-triangle"></div>
+                <div class="wax-seal" id="waxSeal">
+                    <span>H</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tap-instruction" id="tapInstruction">Tap envelope to flip & open letter</div>
+
+    <div class="letter-container" id="letterContainer">
+        <div class="crest-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Hogwarts_coat_of_arms_colored.svg" alt="Hogwarts Crest">
+        </div>
+        <div class="school-header">
+            HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY<br>
+            <span style="font-size: 0.85rem; font-style: italic; font-weight: normal;">Headmistress: Minerva McGonagall</span>
+        </div>
+        
+        <div class="letter-body">
+            <p id="salutation">Dear Mr Potter,</p>
+            
+            <p>We are pleased to inform you that you have been accepted to a birthday celebration Hogwarts School of Witchcraft and Wizardry.</p>
+            
+            <p>The start of term is November 14th, and the feast will begin promptly at 5pm. Students are expected to arrive in Hogwarts robes or dress as their favorite Wizarding World character.</p>
+            
+            <p>You may contribute by bringing a magical treat (food, potion or drink) of choice for the Great Hall feast.</p>
+            
+            <p>Please confirm your RSVP by completing the student enrollment form below. We await your owl no later than October 30th.</p>
+            
+            <p style="margin-top: 30px;">
+                Yours sincerely,<br>
+                <span class="signature-font">Natalie Takuma</span>
+                <span style="font-size: 0.85rem; display: block; margin-top: 5px; font-family: 'Cinzel', serif; font-weight: bold;">DEPUTY HEADMISTRESS & HOST</span>
+            </p>
+
+            <div class="rsvp-section">
+                <h3>Owl Post RSVP & Student Enrollment</h3>
+                <form id="rsvpForm" onsubmit="submitRSVP(event)">
+                    <div class="form-group">
+                        <label for="costume">Wizarding Character / Costume:</label>
+                        <input type="text" id="costume" required placeholder="e.g. Hermione Granger in robes">
+                    </div>
+                    <div class="form-group">
+                        <label for="treat">Magical Treat (Food, Potion or Drink):</label>
+                        <input type="text" id="treat" required placeholder="e.g. Butterbeer cupcakes">
+                    </div>
+                    <button type="submit" class="owl-btn">Dispatch Owl with RSVP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="url-tool">
+        <strong>Personalize for a Guest:</strong>
+        <div style="display: flex; gap: 10px; margin-top: 5px;">
+            <input type="text" id="guestNameInput" placeholder="First & Last Name (e.g. Hermione Granger)" style="margin:0;">
+            <button onclick="generateLink()">Copy Link</button>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstNameParam = urlParams.get('first');
+        const lastNameParam = urlParams.get('last');
+
+        let firstName = "H";
+
+        if (firstNameParam && lastNameParam) {
+            firstName = firstNameParam;
+            document.getElementById('displayAddress').innerHTML = `
+                ${firstNameParam.toUpperCase()} ${lastNameParam.toUpperCase()}<br>
+                THE CUPBOARD UNDER THE STAIRS,<br>
+                4 PRIVET DRIVE,<br>
+                LITTLE WHINGING,<br>
+                SURREY.
+            `;
+            document.getElementById('salutation').innerText = `Dear ${firstNameParam},`;
+        } else if (firstNameParam) {
+            firstName = firstNameParam;
+            document.getElementById('displayAddress').innerHTML = `
+                ${firstNameParam.toUpperCase()}<br>
+                THE CUPBOARD UNDER THE STAIRS,<br>
+                4 PRIVET DRIVE,<br>
+                LITTLE WHINGING,<br>
+                SURREY.
+            `;
+            document.getElementById('salutation').innerText = `Dear ${firstNameParam},`;
+        }
+
+        let isFlipped = false;
+        let isOpen = false;
+
+        const wrapper = document.getElementById('envelopeWrapper');
+        const instruction = document.getElementById('tapInstruction');
+
+        wrapper.addEventListener('click', function(e) {
+            if (!isFlipped) {
+                wrapper.classList.add('flipped');
+                instruction.innerText = "Tap the wax seal to open";
+                isFlipped = true;
+            } else if (!isOpen) {
+                openLetter();
+            }
+        });
+
+        function openLetter() {
+            if (isOpen) return;
+            isOpen = true;
+            wrapper.classList.add('open');
+            instruction.style.display = 'none';
+
+            setTimeout(() => {
+                document.getElementById('envelopeScene').style.display = 'none';
+                document.getElementById('letterContainer').classList.add('visible');
+            }, 650);
+        }
+
+        function submitRSVP(e) {
+            e.preventDefault();
+            const costume = document.getElementById('costume').value;
+            const treat = document.getElementById('treat').value;
+            alert(`🦉 Owl dispatched successfully, ${firstName}! Your character (${costume}) and your magical treat (${treat}) have been recorded for the Great Hall feast.`);
+        }
+
+        function generateLink() {
+            const val = document.getElementById('guestNameInput').value.trim();
+            if(!val) {
+                alert("Please enter a guest name.");
+                return;
+            }
+            const parts = val.split(' ');
+            const f = parts[0];
+            const l = parts.slice(1).join(' ') || '';
+            const newUrl = `${window.location.origin}${window.location.pathname}?first=${encodeURIComponent(f)}&last=${encodeURIComponent(l)}`;
+            
+            navigator.clipboard.writeText(newUrl).then(() => {
+                alert("Personalized invite link copied to clipboard! Send this URL via text:\n\n" + newUrl);
+            });
+        }
+    </script>
+</body>
+</html>
